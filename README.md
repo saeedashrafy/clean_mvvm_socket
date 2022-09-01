@@ -12,3 +12,4 @@
 ## Demo
 
 ![screen](demo.gif "Screen") 
+<img src="https://github.com/saeedashrafy/clean_mvvm_socket/blob/main/demo.gif" width=220 />
