@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Crypto Live</string>
+    <string name="no_data">No data found</string>
+    <string name="offline">You are currently offline</string>
+    <string name="offline_still">You are still offline</string>
+    <string name="volume_month">Volume 30d</string>
+    <string name="low_24h">Low 24h</string>
+    <string name="volume_24h">Volume 24h</string>
+    <string name="high_24h">High 24h</string>
+    <string name="home_screen">Crypto Live</string>
+    <string name="detail_screen">Detail</string>
+    <string name="open_price">Open price</string>
+
+</resources>
