@@ -6,9 +6,10 @@
 - [Coroutines](https://developer.android.com/kotlin/coroutines) and flows
 - [Room Persistence Library](https://developer.android.com/training/data-storage/room "Room Persistence Library")
 - Dependency Injection With Hilt Library.
+- [Jetpack Compose for UI](https://developer.android.com/jetpack/compose "Jetpack Compose for UI")
 - Clean Architecture approach.
--  [Scarlet](https://github.com/Tinder/Scarlet) Web Socket Library
+- [Scarlet](https://github.com/Tinder/Scarlet) Web Socket Library
 
 ## Demo
 
-<img src="https://github.com/saeedashrafy/clean_mvvm_socket/blob/main/demo.gif" width=230 />
+<img src="https://github.com/saeedashrafy/clean_mvvm_socket/blob/main/demo.gif" width=240 />
