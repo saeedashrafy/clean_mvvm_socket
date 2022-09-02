@@ -2,12 +2,12 @@ package com.ashr.cleanMvvmSocket.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ashr.cleanMvvmSocket.core.DispatcherProvider
-import com.ashr.cleanMvvmSocket.core.DispatcherProviderImpl
+import com.ashr.cleanMvvmSocket.core.di.annotation.HiltDispatchers
 import com.ashr.cleanMvvmSocket.domain.model.ConnectionState
 import com.ashr.cleanMvvmSocket.domain.model.Ticker
 import com.ashr.cleanMvvmSocket.domain.usecase.GetTickersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class TickerViewModel @Inject constructor(
     val getTickersUseCase: GetTickersUseCase,
-    private val dispatcherProvider: DispatcherProvider,
+    @HiltDispatchers.IO private val coroutineDispatcher: CoroutineDispatcher,
 ) : ViewModel() {
 
     private val combinedPrices = mutableMapOf<String, Ticker>()
@@ -29,7 +29,7 @@ class TickerViewModel @Inject constructor(
     }
 
     fun getCryptos(productId: String? = null) {
-        viewModelScope.launch(dispatcherProvider.io) {
+        viewModelScope.launch(coroutineDispatcher) {
             getTickersUseCase()
                 .onStart {
                     _uiState.update { it.copy(isLoading = true) }
