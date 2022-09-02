@@ -28,7 +28,7 @@ class RemoteModule {
 
     @Provides
     @Singleton
-    fun provideScarlet(application: MyApplication, client: OkHttpClient, moshi: Moshi): Scarlet {
+    fun provideScarlet( client: OkHttpClient, moshi: Moshi): Scarlet {
         return Scarlet.Builder()
             .webSocketFactory(client.newWebSocketFactory(BASE_URL))
             .addMessageAdapterFactory(MoshiMessageAdapter.Factory(moshi))
@@ -38,10 +38,6 @@ class RemoteModule {
             .build()
     }
 
-
-    /**
-     * Provide context as CryptoApp
-     */
     @Provides
     @Singleton
     fun providesApplication(@ApplicationContext context: Context): MyApplication {
@@ -49,9 +45,6 @@ class RemoteModule {
     }
 
 
-    /**
-     * Moshi for json serialization
-     */
     @Provides
     @Singleton
     fun provideMoshi(): Moshi {
@@ -60,9 +53,6 @@ class RemoteModule {
     }
 
 
-    /**
-     * Okhttp
-     */
     @Provides
     @Singleton
     fun provideHttpClient(): OkHttpClient {
@@ -82,10 +72,6 @@ class RemoteModule {
     fun provideCoinbaseService(scarlet: Scarlet): CoinbaseService {
         return scarlet.create()
     }
-
-
-    @Provides
-    fun provideTickerEntityMapper(): TickerEntityMapper = TickerEntityMapper()
 
     @Provides
     @Singleton

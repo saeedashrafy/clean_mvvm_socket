@@ -1,6 +1,5 @@
 package com.ashr.cleanMvvmSocket.data.repository
 
-import com.ashr.cleanMvvmSocket.core.CoroutineDispatcherProvider
 import com.ashr.cleanMvvmSocket.data.datasource.cache.TickerCacheDataSource
 import com.ashr.cleanMvvmSocket.data.datasource.remote.TickerRemoteDataSource
 import com.ashr.cleanMvvmSocket.data.entity.Crypto

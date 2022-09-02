@@ -2,8 +2,9 @@ package com.ashr.cleanMvvmSocket.cache.mapper
 
 import com.ashr.cleanMvvmSocket.cache.model.CachedTicker
 import com.ashr.cleanMvvmSocket.data.entity.TickerEntity
+import javax.inject.Inject
 
-class TickerEntityMapper : EntityMapper<CachedTicker, TickerEntity> {
+class TickerEntityMapper @Inject constructor() : EntityMapper<CachedTicker, TickerEntity> {
     override fun mapFromCached(model: CachedTicker): TickerEntity {
         return TickerEntity(
             productId = model.productId,

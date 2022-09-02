@@ -16,7 +16,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DataBaseModule {
+object DataBaseModule {
 
     @Provides
     @Singleton
@@ -31,9 +31,6 @@ class DataBaseModule {
     fun provideVehicleDao(database: AppDatabase): TickerDao =
         database.vehicleDao()
 
-
-    @Provides
-    fun provideVehicleEntityMapper(): TickerEntityMapper = TickerEntityMapper()
 
     @Provides
     @Singleton

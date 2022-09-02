@@ -2,8 +2,9 @@ package com.ashr.cleanMvvmSocket.remote.mapper
 
 import com.ashr.cleanMvvmSocket.data.entity.TickerEntity
 import com.ashr.cleanMvvmSocket.remote.model.RemoteTicker
+import javax.inject.Inject
 
-class TickerEntityMapper : EntityMapper<RemoteTicker, TickerEntity> {
+class TickerEntityMapper @Inject constructor() : EntityMapper<RemoteTicker, TickerEntity> {
 
     override fun mapFromRemote(type: RemoteTicker): TickerEntity {
         return TickerEntity(
