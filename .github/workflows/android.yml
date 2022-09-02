@@ -17,9 +17,4 @@ jobs:
         java-version: 11
     - name: Make Gradle executable
       run: chmod +x ./gradlew
-    - name: Build Release APK
-      run: ./gradlew assembleRelease
-    - name: Releasing using Hub
-      uses: kyze8439690/action-release-releaseapk@master
-      env:
-       GITHUB_TOKEN: ${{ secrets.TOKEN }}
+ 
