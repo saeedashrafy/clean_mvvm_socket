@@ -11,7 +11,9 @@ import com.ashr.cleanMvvmSocket.remote.model.Subscribe
 import com.tinder.scarlet.WebSocket
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class TickerRepositoryImpl @Inject constructor(
     private val tickerRemoteDataSource: TickerRemoteDataSource,
     private val tickerCacheDataSource: TickerCacheDataSource,

@@ -3,8 +3,9 @@ package com.ashr.cleanMvvmSocket.data.mapper
 import com.ashr.cleanMvvmSocket.data.entity.Crypto
 import com.ashr.cleanMvvmSocket.data.entity.TickerEntity
 import com.ashr.cleanMvvmSocket.domain.model.Ticker
+import javax.inject.Inject
 
-class TickerMapper : Mapper<TickerEntity, Ticker> {
+class TickerMapper @Inject constructor() : Mapper<TickerEntity, Ticker> {
 
     override fun mapFromEntity(entity: TickerEntity): Ticker {
         val enum = Crypto.values().find { crypto -> crypto.id == entity.productId }
