@@ -18,7 +18,6 @@ class TickerRepositoryImpl @Inject constructor(
     private val tickerRemoteDataSource: TickerRemoteDataSource,
     private val tickerCacheDataSource: TickerCacheDataSource,
     private val tickerMapper: TickerMapper,
-    private val dispatcherProvider: CoroutineDispatcherProvider,
 ) : TickerRepository {
 
     override fun observeEvent(): Flow<ConnectionState> {
