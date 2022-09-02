@@ -2,6 +2,7 @@ package com.ashr.cleanMvvmSocket.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ashr.cleanMvvmSocket.core.DispatcherProvider
 import com.ashr.cleanMvvmSocket.core.DispatcherProviderImpl
 import com.ashr.cleanMvvmSocket.domain.model.ConnectionState
 import com.ashr.cleanMvvmSocket.domain.model.Ticker
@@ -15,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class TickerViewModel @Inject constructor(
     val getTickersUseCase: GetTickersUseCase,
-    private val dispatcherProvider: DispatcherProviderImpl,
+    private val dispatcherProvider: DispatcherProvider,
 ) : ViewModel() {
 
     private val combinedPrices = mutableMapOf<String, Ticker>()
