@@ -10,7 +10,7 @@
 - Clean Architecture approach.
 - [Scarlet](https://github.com/Tinder/Scarlet) Web Socket Library
 
-#Notice: in some counties you need to use proxy for connect to services
+## Notice: in some counties you need to use proxy for connect to services
 
 ## Demo
 
